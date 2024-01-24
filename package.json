@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-nestjs-orm",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Checks for errorneous practices using ORM with NestJS",
   "keywords": [
     "eslint",
@@ -8,27 +8,21 @@
     "eslint-plugin"
   ],
   "author": "aashutoshrathi",
-  "main": "./lib/index.js",
-  "exports": "./lib/index.js",
+  "main": "./cjs/index.js",
+  "exports": "./cjs/index.js",
   "scripts": {
-    "lint": "npm-run-all \"lint:*\"",
-    "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
-    "lint:js": "eslint .",
-    "test": "mocha tests --recursive",
-    "update:eslint-docs": "eslint-doc-generator"
+    "build": "tsc -b",
+    "test": "vitest"
   },
   "dependencies": {
-    "requireindex": "^1.2.0"
+    "@typescript-eslint/utils": "^6.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
-    "@typescript-eslint/parser": "^6.19.1",
-    "eslint": "^8.19.0",
-    "eslint-doc-generator": "^1.0.0",
-    "eslint-plugin-eslint-plugin": "^5.0.0",
-    "eslint-plugin-node": "^11.1.0",
-    "mocha": "^10.0.0",
-    "npm-run-all": "^4.1.5"
+    "@typescript-eslint/parser": "^6.1.0",
+    "@typescript-eslint/rule-tester": "^6.1.0",
+    "eslint": "^8.45.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
   },
   "engines": {
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"

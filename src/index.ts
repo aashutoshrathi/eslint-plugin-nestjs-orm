@@ -2,21 +2,18 @@
  * @fileoverview Checks for errorneous practices using ORM with NestJS
  * @author aashutoshrathi
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const requireIndex = require("requireindex");
+import { TSESLint } from "@typescript-eslint/utils";
+import noBadModelInjectionRule from "./rules/no-bad-model-injection";
 
 //------------------------------------------------------------------------------
 // Plugin Definition
 //------------------------------------------------------------------------------
 
-
-// import all rules in lib/rules
-module.exports.rules = requireIndex(__dirname + "/rules");
-
-
-
+export const rules = {
+  "no-bad-model-injection": noBadModelInjectionRule,
+} satisfies Record<string, TSESLint.RuleModule<string, Array<unknown>>>;
