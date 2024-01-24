@@ -28,31 +28,12 @@ Add `nestjs-orm` to the plugins section of your `.eslintrc` configuration file. 
 }
 ```
 
-
 Then configure the rules you want to use under the rules section.
 
 ```json
 {
     "rules": {
-        "nestjs-orm/rule-name": 2
+        "nestjs-orm/no-bad-model-injection": "error"
     }
 }
 ```
-
-
-
-## Configurations
-
-<!-- begin auto-generated configs list -->
-TODO: Run eslint-doc-generator to generate the configs list (or delete this section if no configs are offered).
-<!-- end auto-generated configs list -->
-
-
-
-## Rules
-
-<!-- begin auto-generated rules list -->
-TODO: Run eslint-doc-generator to generate the rules list.
-<!-- end auto-generated rules list -->
-
-
