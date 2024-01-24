@@ -37,3 +37,9 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
+
+## Tools Used
+
+- [AST Explorer](https://astexplorer.net/)
+- [ESLint Developer Guide](https://eslint.org/docs/developer-guide/working-with-rules)
+- [TypeScript ESLint Docs](https://typescript-eslint.io/developers/custom-rules)
