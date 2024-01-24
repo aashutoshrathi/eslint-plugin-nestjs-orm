@@ -1,5 +1,5 @@
 /**
- * @fileoverview Checks for errorneous practices using ORM with NestJS
+ * @fileoverview Checks for erroneous practices using ORM with NestJS
  * @author aashutoshrathi
  */
 

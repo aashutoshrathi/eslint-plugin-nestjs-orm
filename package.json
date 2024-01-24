@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-nestjs-orm",
   "version": "0.1.0",
-  "description": "Checks for errorneous practices using ORM with NestJS",
+  "description": "Checks for erroneous practices using ORM with NestJS",
   "keywords": [
     "eslint",
     "eslintplugin",
