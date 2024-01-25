@@ -50,14 +50,14 @@ const badModelInjectionRule = (
 
       const { parameter } = paramWithModelDecorator;
       if (!parameter) {
-        context.report({
+        return context.report({
           node: paramWithModelDecorator,
           messageId: MessageIdsEnum.missingModelParameter,
         });
       }
 
       if (!parameter?.typeAnnotation) {
-        context.report({
+        return context.report({
           node: paramWithModelDecorator,
           messageId: MessageIdsEnum.missingModelParameterType,
         });
@@ -68,14 +68,14 @@ const badModelInjectionRule = (
           parameter.typeAnnotation.typeAnnotation;
 
         if (typeName.name !== "Model") {
-          context.report({
+          return context.report({
             node: paramWithModelDecorator,
             messageId: MessageIdsEnum.nonModelTypeUsed,
           });
         }
 
         if (!typeParameters || typeParameters?.params?.length !== 1) {
-          context.report({
+          return context.report({
             node: paramWithModelDecorator,
             messageId: MessageIdsEnum.missingModelType,
           });

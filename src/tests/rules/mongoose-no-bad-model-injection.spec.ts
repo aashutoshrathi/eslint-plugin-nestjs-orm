@@ -35,12 +35,7 @@ ruleTester.run("mongoose-no-bad-model-injection", noBadModelInjectionRule, {
             private readonly bsModel: Model<Business>
           ) {}
         }`,
-      errors: [
-        { messageId: MessageIdsEnum.nonModelTypeUsed },
-        {
-          messageId: MessageIdsEnum.missingModelType,
-        },
-      ],
+      errors: [{ messageId: MessageIdsEnum.nonModelTypeUsed }],
     },
     {
       code: `class HahaTest {
@@ -79,7 +74,6 @@ ruleTester.run("mongoose-no-bad-model-injection", noBadModelInjectionRule, {
         }`,
       errors: [
         {
-          // as readonly is considered as parameter
           messageId: MessageIdsEnum.missingModelParameterType,
         },
       ],
