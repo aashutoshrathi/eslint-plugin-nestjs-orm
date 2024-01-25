@@ -8,8 +8,8 @@
     "eslint-plugin"
   ],
   "author": "aashutoshrathi",
-  "main": "./cjs/index.js",
-  "exports": "./cjs/index.js",
+  "main": "./build/index.js",
+  "exports": "./build/index.js",
   "scripts": {
     "build": "tsc -b",
     "test": "vitest"

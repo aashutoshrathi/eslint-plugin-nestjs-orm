@@ -20,7 +20,7 @@
     "declarationMap": true,
     "rootDir": "src",
     "skipLibCheck": true,
-    "outDir": "cjs",
+    "outDir": "build",
     "module": "Node16",
     "target": "es6",
     "exactOptionalPropertyTypes": true,
