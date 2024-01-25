@@ -1,5 +1,10 @@
 # eslint-plugin-nestjs-orm
 
+[![npm-badge](https://img.shields.io/npm/v/eslint-plugin-nestjs-orm.svg?style=flat-square)](https://www.npmjs.com/package/eslint-plugin-nestjs-orm)
+![GitHub stars](https://img.shields.io/github/stars/aashutoshrathi/eslint-plugin-nestjs-orm.svg?style=flat-square)
+[![npm](https://img.shields.io/npm/dt/eslint-plugin-nestjs-orm.svg?style=flat-square)](https://www.npmjs.com/package/eslint-plugin-nestjs-orm)
+
+
 Guardrails to prevent bad practices or do some serious mistakes when using NestJS Moongose or ORMs.
 
 ## Motivation 💡 
