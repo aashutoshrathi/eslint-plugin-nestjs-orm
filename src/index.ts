@@ -8,12 +8,12 @@
 //------------------------------------------------------------------------------
 
 import { TSESLint } from "@typescript-eslint/utils";
-import noBadModelInjectionRule from "./rules/no-bad-model-injection";
+import noBadModelInjectionRule from "./rules/mongoose-no-bad-model-injection";
 
 //------------------------------------------------------------------------------
 // Plugin Definition
 //------------------------------------------------------------------------------
 
 export const rules = {
-  "no-bad-model-injection": noBadModelInjectionRule,
+  "mongoose-no-bad-model-injection": noBadModelInjectionRule,
 } satisfies Record<string, TSESLint.RuleModule<string, Array<unknown>>>;

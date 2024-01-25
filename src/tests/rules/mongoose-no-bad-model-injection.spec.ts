@@ -1,11 +1,11 @@
 import { RuleTester } from "@typescript-eslint/rule-tester";
 import noBadModelInjectionRule, {
   MessageIdsEnum,
-} from "../../rules/no-bad-model-injection";
+} from "../../rules/mongoose-no-bad-model-injection";
 
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-bad-model-injection", noBadModelInjectionRule, {
+ruleTester.run("mongoose-no-bad-model-injection", noBadModelInjectionRule, {
   valid: [
     {
       code: `class HahaTest {
