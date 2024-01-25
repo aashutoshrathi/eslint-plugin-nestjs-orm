@@ -13,7 +13,8 @@
   "exports": "./build/index.js",
   "scripts": {
     "build": "tsc -b",
-    "test": "vitest"
+    "test:watch": "vitest",
+    "test": "vitest run"
   },
   "files": [
     "build",
