@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-nestjs-orm",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Checks for erroneous practices using ORM with NestJS",
   "keywords": [
     "eslint",
@@ -8,12 +8,17 @@
     "eslint-plugin"
   ],
   "author": "aashutoshrathi",
+  "types": "./build/index.d.ts",
   "main": "./build/index.js",
   "exports": "./build/index.js",
   "scripts": {
     "build": "tsc -b",
     "test": "vitest"
   },
+  "files": [
+    "build",
+    "README.md"
+  ],
   "dependencies": {
     "@typescript-eslint/utils": "^6.1.0"
   },
