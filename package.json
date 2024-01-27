@@ -1,12 +1,15 @@
 {
   "name": "eslint-plugin-nestjs-orm",
-  "version": "0.2.1",
-  "description": "Checks for erroneous practices using ORM with NestJS",
+  "version": "0.2.2",
+  "description": "Guardrails to prevent bad practices or do some serious mistakes when using NestJS Moongose or ORMs.",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "nestjs",
+    "mongoose"
   ],
+  "homepage": "https://github.com/aashutoshrathi/eslint-plugin-nestjs-orm",
   "author": "aashutoshrathi",
   "types": "./build/index.d.ts",
   "main": "./build/index.js",
@@ -20,10 +23,15 @@
     "build",
     "README.md"
   ],
-  "dependencies": {
-    "@typescript-eslint/utils": "^6.1.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aashutoshrathi/eslint-plugin-nestjs-orm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aashutoshrathi/eslint-plugin-nestjs-orm/issues"
   },
   "devDependencies": {
+    "@typescript-eslint/utils": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
     "@typescript-eslint/rule-tester": "^6.1.0",
     "eslint": "^8.45.0",
