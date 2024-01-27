@@ -16,19 +16,19 @@ const findNodeWithDecorator = (node: any, decoratorName: string) => {
     return null;
   }
   return node.decorators.find(
-    (decorator: any) => decorator.expression.callee.name === decoratorName
+    (decorator: any) => decorator.expression.callee.name === decoratorName,
   );
 };
 
 const badModelInjectionRule = (
-  context: TSESLint.RuleContext<MessageIds, []>
+  context: TSESLint.RuleContext<MessageIds, []>,
 ) => {
   return {
     ClassBody(node: any) {
       const constructorNode = node.body.find(
         (bodyNode: any) =>
           bodyNode.type === AST_NODE_TYPES.MethodDefinition &&
-          bodyNode.kind === "constructor"
+          bodyNode.kind === "constructor",
       );
 
       if (!constructorNode) {
@@ -41,7 +41,7 @@ const badModelInjectionRule = (
       }
 
       const paramWithModelDecorator = params.find((param: any) =>
-        findNodeWithDecorator(param, DECORATOR_NAME)
+        findNodeWithDecorator(param, DECORATOR_NAME),
       );
 
       if (!paramWithModelDecorator) {
@@ -64,7 +64,7 @@ const badModelInjectionRule = (
       }
 
       if (parameter.typeAnnotation?.typeAnnotation) {
-        const { typeName, typeArguments } =
+        const { typeName, typeParameters } =
           parameter.typeAnnotation.typeAnnotation;
 
         if (typeName.name !== "Model") {
@@ -74,7 +74,7 @@ const badModelInjectionRule = (
           });
         }
 
-        if (!typeArguments || typeArguments?.params?.length !== 1) {
+        if (!typeParameters || typeParameters?.params?.length !== 1) {
           return context.report({
             node: paramWithModelDecorator,
             messageId: MessageIdsEnum.missingModelType,
