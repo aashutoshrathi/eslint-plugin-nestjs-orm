@@ -1,14 +1,8 @@
 {
   "name": "eslint-plugin-nestjs-orm",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Guardrails to prevent bad practices or do some serious mistakes when using NestJS Moongose or ORMs.",
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "nestjs",
-    "mongoose"
-  ],
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "nestjs", "mongoose"],
   "homepage": "https://github.com/aashutoshrathi/eslint-plugin-nestjs-orm",
   "author": "aashutoshrathi",
   "types": "./build/index.d.ts",
@@ -19,12 +13,7 @@
     "test:watch": "vitest",
     "test": "vitest run"
   },
-  "files": [
-    "build",
-    "!**/*.map",
-    "!build/tests/*",
-    "README.md"
-  ],
+  "files": ["build", "!**/*.map", "!build/tests/*", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aashutoshrathi/eslint-plugin-nestjs-orm.git"
