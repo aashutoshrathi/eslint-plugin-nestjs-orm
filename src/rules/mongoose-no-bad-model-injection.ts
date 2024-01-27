@@ -64,7 +64,7 @@ const badModelInjectionRule = (
       }
 
       if (parameter.typeAnnotation?.typeAnnotation) {
-        const { typeName, typeParameters } =
+        const { typeName, typeArguments } =
           parameter.typeAnnotation.typeAnnotation;
 
         if (typeName.name !== "Model") {
@@ -74,7 +74,7 @@ const badModelInjectionRule = (
           });
         }
 
-        if (!typeParameters || typeParameters?.params?.length !== 1) {
+        if (!typeArguments || typeArguments?.params?.length !== 1) {
           return context.report({
             node: paramWithModelDecorator,
             messageId: MessageIdsEnum.missingModelType,
