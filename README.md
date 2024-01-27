@@ -14,7 +14,9 @@ But with Mongoose there is a catch, if you attach inject model to non-model vari
 
 One such incident is shown below:
 
-<img alt="GIF of mishap" src="https://s3.ap-south-1.amazonaws.com/shared.aashutosh.dev/eslint-rule-gif.gif">
+| Before | After |
+| :---: | :---: |
+| <img alt="Before" src="https://s3.ap-south-1.amazonaws.com/shared.aashutosh.dev/eslint-rule-gif.gif"> | <img alt="After" src="https://s3.ap-south-1.amazonaws.com/shared.aashutosh.dev/after-eslint.gif"> |
 
 ## Installation 🛠️
 
