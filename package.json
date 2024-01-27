@@ -21,6 +21,8 @@
   },
   "files": [
     "build",
+    "!**/*.map",
+    "!build/tests/*",
     "README.md"
   ],
   "repository": {
