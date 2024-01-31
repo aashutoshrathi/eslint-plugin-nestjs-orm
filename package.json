@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-nestjs-orm",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Guardrails to prevent bad practices or do some serious mistakes when using NestJS Moongose or ORMs.",
   "keywords": ["eslint", "eslintplugin", "eslint-plugin", "nestjs", "mongoose"],
   "homepage": "https://github.com/aashutoshrathi/eslint-plugin-nestjs-orm",
