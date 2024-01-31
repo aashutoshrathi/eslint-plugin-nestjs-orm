@@ -2,7 +2,6 @@ import { TSESLint, AST_NODE_TYPES } from "@typescript-eslint/utils";
 
 export enum MessageIdsEnum {
   missingModelType = "missingModelType",
-  missingModelParameter = "missingModelParameter",
   missingModelParameterType = "missingModelParameterType",
   nonModelTypeUsed = "nonModelTypeUsed",
 }
@@ -16,19 +15,19 @@ const findNodeWithDecorator = (node: any, decoratorName: string) => {
     return null;
   }
   return node.decorators.find(
-    (decorator: any) => decorator.expression.callee.name === decoratorName,
+    (decorator: any) => decorator.expression.callee.name === decoratorName
   );
 };
 
 const badModelInjectionRule = (
-  context: TSESLint.RuleContext<MessageIds, []>,
+  context: TSESLint.RuleContext<MessageIds, []>
 ) => {
   return {
     ClassBody(node: any) {
       const constructorNode = node.body.find(
         (bodyNode: any) =>
           bodyNode.type === AST_NODE_TYPES.MethodDefinition &&
-          bodyNode.kind === "constructor",
+          bodyNode.kind === "constructor"
       );
 
       if (!constructorNode) {
@@ -41,7 +40,7 @@ const badModelInjectionRule = (
       }
 
       const paramWithModelDecorator = params.find((param: any) =>
-        findNodeWithDecorator(param, DECORATOR_NAME),
+        findNodeWithDecorator(param, DECORATOR_NAME)
       );
 
       if (!paramWithModelDecorator) {
@@ -49,36 +48,31 @@ const badModelInjectionRule = (
       }
 
       const { parameter } = paramWithModelDecorator;
-      if (!parameter) {
-        return context.report({
-          node: paramWithModelDecorator,
-          messageId: MessageIdsEnum.missingModelParameter,
-        });
-      }
-
-      if (!parameter?.typeAnnotation) {
-        return context.report({
-          node: paramWithModelDecorator,
-          messageId: MessageIdsEnum.missingModelParameterType,
-        });
-      }
-
-      if (parameter.typeAnnotation?.typeAnnotation) {
-        const { typeName, typeParameters } =
-          parameter.typeAnnotation.typeAnnotation;
-
-        if (typeName.name !== "Model") {
+      if (parameter) {
+        if (!parameter.typeAnnotation) {
           return context.report({
             node: paramWithModelDecorator,
-            messageId: MessageIdsEnum.nonModelTypeUsed,
+            messageId: MessageIdsEnum.missingModelParameterType,
           });
         }
 
-        if (!typeParameters || typeParameters?.params?.length !== 1) {
-          return context.report({
-            node: paramWithModelDecorator,
-            messageId: MessageIdsEnum.missingModelType,
-          });
+        if (parameter.typeAnnotation?.typeAnnotation) {
+          const { typeName, typeParameters } =
+            parameter.typeAnnotation.typeAnnotation;
+
+          if (typeName.name !== "Model") {
+            return context.report({
+              node: paramWithModelDecorator,
+              messageId: MessageIdsEnum.nonModelTypeUsed,
+            });
+          }
+
+          if (!typeParameters || typeParameters?.params?.length !== 1) {
+            return context.report({
+              node: paramWithModelDecorator,
+              messageId: MessageIdsEnum.missingModelType,
+            });
+          }
         }
       }
     },
@@ -91,8 +85,6 @@ const rule: TSESLint.RuleModule<MessageIds> = {
     type: "problem",
     schema: [],
     messages: {
-      missingModelParameter:
-        "The statement with @InjectModel() decorator should contain a parameter",
       nonModelTypeUsed: "Parameter type should be Model<T>",
       missingModelParameterType: "Parameter doesn't have a type annotation",
       missingModelType:

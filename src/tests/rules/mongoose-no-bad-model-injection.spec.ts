@@ -26,6 +26,14 @@ ruleTester.run("mongoose-no-bad-model-injection", noBadModelInjectionRule, {
       }`,
     },
     {
+      code: `export class HahaService {
+        constructor(
+          @InjectModel(OA.name)
+          aModel: Model<OADoc>,
+        ) {}
+      }`,
+    },
+    {
       code: `class HahaTest {
           constructor(
             private readonly nibbleService: NibbleService,
