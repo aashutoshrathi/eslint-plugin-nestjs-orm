@@ -27,7 +27,7 @@
     "@typescript-eslint/rule-tester": "^6.1.0",
     "eslint": "^8.45.0",
     "typescript": "^5.1.6",
-    "vitest": "^0.33.0"
+    "vitest": "^3.2.4"
   },
   "engines": {
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
